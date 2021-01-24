@@ -4,6 +4,9 @@ import mu.KotlinLogging
 
 private val logger = KotlinLogging.logger {}
 
+var title = ""
+var description = ""
+
 fun main(args: Array<String>) {
     logger.info { "Launching Placemark Console App" }
     println("Placemark Kotlin App Version 1.0")
@@ -59,7 +62,13 @@ fun addPlacemark(){
 }
 
 fun updatePlacemark() {
-    println("You Chose Update Placemark")
+    println("Update Placemark")
+    println()
+    print("Enter a new Title for [ $title ] : ")
+    title = readLine()!!
+    print("Enter a new Description for [ $description ] : ")
+    description = readLine()!!
+    println("You updated [ $title ] for title and [ $description ] for description")
 }
 
 fun listPlacemarks() {
